@@ -1,3 +1,9 @@
+#for windows: pip install mediapipe
+#for mac: 
+    #if you have it installed: pip3 uninstall mediapipe -y
+    #pip3 install mediapipe==0.10.30
+
+import csv
 import cv2
 import numpy as np
 import mediapipe as mp
@@ -58,3 +64,22 @@ with PoseLandmarker.create_from_options(options) as landmarker:
         frame_timestamp_ms = int(1000*frame_index / fps)
         result = landmarker.detect_for_video(mp_image, frame_timestamp_ms)
         print(frame_index)
+
+
+print(result)
+
+kick_csv = "kick_coordinates.csv"
+
+header = ["landmark_index", "x", "y", "z", "visibility", "presence"]
+
+with open(kick_csv, mode="w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+
+    if result.pose_landmarks:
+        landmarks = result.pose_landmarks[0]  # first detected person
+        for i, lm in enumerate(landmarks):
+            writer.writerow([i, lm.x, lm.y, lm.z, lm.visibility, lm.presence])
+
+print(f"Saved to {kick_csv}")
+
