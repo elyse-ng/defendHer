@@ -10,6 +10,11 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
+kick_csv = "kick_coordinates.csv" # CSV for kick coordinates
+header = ["frame", "timestamp_ms", "landmark_index", "x", "y", "z", "visibility", "presence"]
+
+
+
 # reference https://gist.github.com/rmeziatisab/20820a7c8cc667a1da44f22bcbcb7923
 
 model_path = 'pose_landmarker_full.task';
@@ -46,40 +51,37 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 # Detect poses from mages
 # Extract pose landmarks
 # Extract pose landmarks
-with PoseLandmarker.create_from_options(options) as landmarker:
-    frame_index = 0
-    while cap.isOpened():
-        hasFrame, image = cap.read()
-        if not hasFrame:
-            print('No more frames to read!')
-            break
-
-        # Reorder the RGB color channels as data is loaded with the BGR order with the read method
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        # Transform the frame to a NumPy ndarray before converting it to an Image
-        numpy_frame_from_opencv = np.asarray(image)
-        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=numpy_frame_from_opencv)
-        frame_index += 1 # you can use cap.get(cv2.CAP_PROP_POS_FRAMES) instead
-        # Compute the frame timestamp and cast it to int as required by the detect_for_video function
-        frame_timestamp_ms = int(1000*frame_index / fps)
-        result = landmarker.detect_for_video(mp_image, frame_timestamp_ms)
-        print(frame_index)
-
-
-print(result)
-
-kick_csv = "kick_coordinates.csv"
-
-header = ["landmark_index", "x", "y", "z", "visibility", "presence"]
-
 with open(kick_csv, mode="w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(header)
 
-    if result.pose_landmarks:
-        landmarks = result.pose_landmarks[0]  # first detected person
-        for i, lm in enumerate(landmarks):
-            writer.writerow([i, lm.x, lm.y, lm.z, lm.visibility, lm.presence])
+    with PoseLandmarker.create_from_options(options) as landmarker:
+        frame_index = 0
+        while cap.isOpened():
+            hasFrame, image = cap.read()
+            if not hasFrame:
+                print('No more frames to read!')
+                break
 
-print(f"Saved to {kick_csv}")
+            # Reorder the RGB color channels as data is loaded with the BGR order with the read method
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            # Transform the frame to a NumPy ndarray before converting it to an Image
+            numpy_frame_from_opencv = np.asarray(image)
+            mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=numpy_frame_from_opencv)
+            frame_index += 1 # you can use cap.get(cv2.CAP_PROP_POS_FRAMES) instead
+            # Compute the frame timestamp and cast it to int as required by the detect_for_video function
+            frame_timestamp_ms = int(1000*frame_index / fps)
+            result = landmarker.detect_for_video(mp_image, frame_timestamp_ms)
+            print(frame_index)
+
+            if result.pose_landmarks:
+                landmarks = result.pose_landmarks[0]  # first detected person
+                for i, lm in enumerate(landmarks):
+                    writer.writerow([frame_index, frame_timestamp_ms, i, lm.x, lm.y, lm.z, lm.visibility, lm.presence])
+            else:
+                # no person detected this frame
+                writer.writerow([frame_index, frame_timestamp_ms, "", "", "", "", "", ""])
+
+            print(frame_index)
+
 
