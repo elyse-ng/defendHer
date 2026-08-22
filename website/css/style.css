@@ -4,28 +4,35 @@
     font-size: 20px;
 
 }
-ul.nav_bar {
+.nav_bar {
     font-family: 'Jersey 15', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-top: 2rem;
-    font-size: clamp(1rem, 5vw, 2rem);
 
+    font-size: clamp(1rem, 5vw, 2rem);
     display: flex;
     justify-content: center;
     gap: clamp(1rem, 5vw, 4rem);
     flex-wrap: wrap;
 }
 
-ul.nav_bar a {
-    text-decoration: none;
+.nav_bar li {
     color: #f5f5f5;
-  
+    padding: 20px;
 }
-ul.nav_bar a:hover {
+
+.nav_bar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav_bar li:hover {
     color: #865DFF;
-    transition: 0.3s ease-in-out;
+}
+.nav_bar li:hover {
+
+    transition: 0.2s ease-in-out;
 }
 
 /*HOMEPAGE*/
@@ -149,21 +156,21 @@ ul.nav_bar a:hover {
 }
 /* LEVEL 1 PAGE CSS */
 .dropdown {
-    padding-bottom: 30px;
+    background-color: grey;
   display: flex;
   flex-direction: row;
 }
 
 .dropdown:hover .drop-level {
   display: block;
-  transition: transform 0.6s;
+  transition: transform 0.2s;
 }
+
 .drop-level {
   display: none;
   position: absolute;
-  top: 90px;
+  top: 70px;
   right: 417px;
-  /*border: 1px solid gray;*/
   background-color: #1E1E1E;
   min-width: 120px;
   z-index: 100;
@@ -172,16 +179,22 @@ ul.nav_bar a:hover {
 .drop-level a {
   height: 100%;
   font-size: 22px;
-  color: rgb(25, 84, 31);
+  color: white;
   display: flex;
   text-decoration: none; /*removes the link underline*/
-  align-items: center;
-  padding: 5px;
-  width: 250px;
-  border: 1px solid rgb(188, 188, 188);
+  padding: 15px;
+  width: 150px;
+  border: 1px #1E1E1E;
+
 }
 
 .drop-level a:hover {
   color: white;
   background-color: rgb(188, 188, 188);
+  border: 1px #1E1E1E;
+}
+
+.drop-level img {
+    padding-right: 10px;
+    image-rendering: pixelated;
 }
