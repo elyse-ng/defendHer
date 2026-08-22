@@ -270,6 +270,9 @@ width: 45vw; }
 
 
 /* LEVEL 1 PAGE CSS */
+.level1 {
+    overflow: scroll;
+}
 
 .dropdown {
     background-color: grey;
@@ -370,6 +373,21 @@ details {
 	border-radius: 0.3rem;
 }
 
+.details_content {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    list-style-type: none;
+    align-items: flex-start;
+    font-size: clamp(17px, 3vw, 30px);
+    
+}
+
 summary {
     color: white;
     font-size: 40px;
@@ -380,7 +398,6 @@ summary {
 
 /* Demo Code */
 .details::details-content {
-	display: block;
 	margin-inline: 2rem;
 	block-size: 0;
 	overflow: hidden;
@@ -416,8 +433,14 @@ summary::before {
 }
 
 .punch_tut {
-    width: 40vw;
-    height: auto;
+    justify-content: center;
+    width: 80vw;
+    max-width: 600px;
+}
+
+.punch_ref {
+    width: 45vw;
+    min-width: 500px;
 }
 /*About Page */
 /*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
