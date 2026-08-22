@@ -140,4 +140,7 @@ torch.save(model.state_dict(), "punch_lstm_model.pth")
 with open("punch_label_encoder.pkl", "wb") as f:
     pickle.dump(le, f)
 
+with open("punch_model_config.pkl", "wb") as f:
+    pickle.dump({"max_len": max_len, "num_features": num_features}, f)
+
 print("\nSaved punch_lstm_model.pth and punch_label_encoder.pkl")
