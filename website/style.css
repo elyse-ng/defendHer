@@ -2,3 +2,10 @@
     list-style-type: none;
 
 }
+
+body{
+    margin: 0;/* Remove default margin */
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #474350, #F8BBD0);
+    background-repeat: no-repeat;
+}
