@@ -5,6 +5,7 @@ import tempfile
 
 import cv2
 import numpy as np
+from pathlib import Path
 import pandas as pd
 import joblib
 import mediapipe as mp
@@ -15,6 +16,14 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 
 ACTIONS = ["kick", "punch", "chop"]
+POSE_CONNECTIONS = (
+    (0, 1), (1, 2), (2, 3), (3, 7), (0, 4), (4, 5), (5, 6), (6, 8),
+    (9, 10), (11, 12), (11, 13), (13, 15), (15, 17), (15, 19), (15, 21),
+    (17, 19), (12, 14), (14, 16), (16, 18), (16, 20), (18, 20), (11, 23),
+    (12, 24), (23, 24), (23, 25), (25, 27), (27, 29), (29, 31), (27, 31),
+    (24, 26), (26, 28), (28, 30), (30, 32), (28, 32), (11, 24),
+)
+
 
 # Models and load models
 models = {}
@@ -34,6 +43,11 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
     PoseLandmarkerOptions = python.vision.PoseLandmarkerOptions
     VisionRunningMode = python.vision.RunningMode
 
+    output_dir = Path('./outputs')
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_video_path = output_dir / f'{video_path.stem}_coordinate.mp4'
+        
+
     options = PoseLandmarkerOptions(
         base_options=BaseOptions(model_asset_path=pose_model_path, delegate=BaseOptions.Delegate.CPU),
         running_mode=VisionRunningMode.VIDEO)
@@ -45,6 +59,13 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
     fps = cap.get(cv2.CAP_PROP_FPS)
     if not fps or fps <= 0:
         fps = 30
+
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    writer = cv2.VideoWriter(
+        str(output_video_path), cv2.VideoWriter_fourcc(*'mp4v'), fps,
+        (width, height))
+
 
     rows = []
 
@@ -60,6 +81,8 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
             frame_index += 1
             timestamp_ms = int(1000 * frame_index / fps)
             result = landmarker.detect_for_video(mp_image, timestamp_ms)
+            annotated = image.copy()
+
 
             if result.pose_landmarks:
                 landmarks = result.pose_landmarks[0]
@@ -70,12 +93,22 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
                     row += [lm.x, lm.y, lm.z, lm.visibility]
                 rows.append(row)
 
+                points = []
+                for landmark in landmarks:
+                    point = (int(landmark.x * width), int(landmark.y * height))
+                    points.append(point)
+                    cv2.circle(annotated, point, 4, (0, 255, 0), -1)
+                for start, end in POSE_CONNECTIONS:
+                    cv2.line(annotated, points[start], points[end], (255, 0, 0), 2)
+
+            writer.write(cv2.cvtColor(annotated, cv2.COLOR_RGB2BGR))
+
     cap.release()
 
     if not rows:
         raise ValueError("No pose detected in any frame of the video")
 
-    return rows
+    return rows, output_video_path
 
 
 def predict_video(video_path, action):
