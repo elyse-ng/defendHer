@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defendher</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body class="level1">
+    <ul class="nav_bar">
+    <li><a href="index.html"><img src="../assets/house.png" class="nav-icon" alt="">
+        Home</a></li>
+    <li class="dropdown">
+        <a href=""><img src="../assets/sparkle.png" class="nav-icon" alt="">
+            Levels</a>
+        <div class="drop-level">
+            <a href="level1.html">
+                <img src="../assets/lock.png">
+                Lvl 1: PUNCH</a>
+            <a href="level2.html">
+                <img src="../assets/lock.png">
+                Lvl 2: KICK</a>
+            <a href="level3.html">
+                <img src="../assets/lock.png">
+                Lvl 3: CHOP</a>
+        </div>    
+    </li> <!--PROBABLY FIX THIS BECAUSE ITS NOT ACTUAL LEVELS PAGE-->
+    <li>
+        <a href="tutorialmain.html">
+            <img src="../assets/punch.png" class="nav-icon" alt="">
+            Tutorial
+        </a>
+    </li>
+    <li>
+        <a href="about.html">
+            <img src="../assets/question_mark.png" class="nav-icon" alt="">
+            About
+        </a>
+    </li>
+    </ul>
+    <div class="second_hlf">
+        <div class="main_cont">
+            <h2 class="lvl_ttl">
+                LEVEL 4: SECRET LEVEL!
+                SELF DEFENSE SCENARIOS!!!
+            </h2>
+                    <!--code retreived from FreeFrontEnd: https://freefrontend.com/css-accordions/-->
+            <div class="example">
+                <details open class="details" name="CSS Weekly" style="--i: 1;">
+                    <summary class="details__summary">Steps For Learning to Block Attacks</summary>
+                    <div class="details__content">
+                        <video class="punch_tut" controls>
+                            <source src="../../chanthanatutorials/technique1_side1.mp4" type="video/mp4">
+                        </video>
+                        <ul class="steps"> <!-- TODO: change video links and make instructions-->
+                            <li>1. Try to move out of the way of the trajectory of the attack.</li>
+                            <li>2. Twist your body away.</li>
+                            <li>3. Use your hand to push the attack away from you</li>
+                            <li>4. Use your new angle to counterattack</li>
+                            
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="video-row">
+                <video class="punch_ref" controls>
+                <source src="../../chanthanatutorials/technique1_side2.mp4" type="video/mp4">
+                </video>
+                <video class="punch_ref" controls>
+                <source src="../../chanthanatutorials/technique2_side1.mp4" type="video/mp4">
+                </video>
+                <video class="punch_ref" controls>
+                <source src="../../chanthanatutorials/technique2_side2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="lvl-bubble-container">
+            <img src="../assets/long_speech_bubble.png" class="lvl-bubble" alt="TALKING BUBBLE">
+            <img src="../assets/punch.png" class="punch-guy" alt="LITTLE PUNCHING GUY">
+            <p class="secret-level-message">Wasn't that fun! Stay tuned for more lessons!
+                <br/> Be sure to take care of yourself and remember what you've learned ;)
+            </p>
+        </div>
+    </div>
+    <script src="../javascript/level1.js"></script>
+</body>
+</html>

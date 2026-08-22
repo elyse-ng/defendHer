@@ -797,3 +797,18 @@ summary::before {
     padding: 0;
 }
 
+
+.secret-level-message {
+    position: absolute;
+    width: min(55%, 650px);
+    margin: 0;
+    left: 45%;
+    top: 25%;
+    transform: translate(-25%, 0%);
+
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
