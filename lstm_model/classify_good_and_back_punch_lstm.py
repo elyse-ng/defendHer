@@ -14,20 +14,20 @@ drop_columns = []
 for i in range(10):
     drop_columns += [f"x{i+1}", f"y{i+1}", f"z{i+1}", f"visibility{i+1}"]
 
-csv_path = "kick_csvs/all_kick.csv"
-kick_data = pd.read_csv(csv_path)
-kick_data = kick_data.drop(columns=drop_columns)
+csv_path = "punch_csvs/all_punch.csv"
+punch_data = pd.read_csv(csv_path)
+punch_data = punch_data.drop(columns=drop_columns)
 
-print("Columns:", kick_data.columns.tolist())
-print("Rows:", kick_data.shape[0])
+print("Columns:", punch_data.columns.tolist())
+print("Rows:", punch_data.shape[0])
 
 # group frames by video
-feature_columns = [c for c in kick_data.columns if c not in ["video_no", "frame", "timestamp_ms", "good"]]
+feature_columns = [c for c in punch_data.columns if c not in ["video_no", "frame", "timestamp_ms", "good"]]
 
 sequences = []
 labels = []
 
-for video_id, group in kick_data.groupby("video_no"):
+for video_id, group in punch_data.groupby("video_no"):
     group = group.sort_values("frame")
     seq = group[feature_columns].to_numpy(dtype=np.float32)
     label = group["good"].iloc[0]
@@ -135,12 +135,9 @@ print("\nClassification Report:\n", classification_report(all_labels, all_preds,
 print("\nConfusion Matrix:\n", confusion_matrix(all_labels, all_preds))
 
 # save video
-torch.save(model.state_dict(), "kick_lstm_model.pth")
+torch.save(model.state_dict(), "punch_lstm_model.pth")
 
-with open("kick_label_encoder.pkl", "wb") as f:
+with open("punch_label_encoder.pkl", "wb") as f:
     pickle.dump(le, f)
 
-with open("kick_model_config.pkl", "wb") as f:
-    pickle.dump({"max_len": max_len, "num_features": num_features}, f)
-
-print("\nSaved kick_lstm_model.pth and kick_label_encoder.pkl")
+print("\nSaved punch_lstm_model.pth and punch_label_encoder.pkl")
