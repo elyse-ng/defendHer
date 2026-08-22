@@ -62,6 +62,7 @@ ul.nav_bar a:hover {
         #3d363d 88%,
         #78656b 100%);
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .tutorial-content {
@@ -73,8 +74,10 @@ ul.nav_bar a:hover {
 .block-guy {
     padding-bottom: 8vh;
     position: fixed;
+
     width: 3%;
     height: auto;
+   image-rendering: pixelated; /* Ensures the pixel art is VERY CLEAR HURRAY */
 }
 #typed-text {
     display: inline-block;
