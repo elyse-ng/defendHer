@@ -545,6 +545,7 @@ image-rendering: pixelated; }
 }
 
 .lvlwebcam {
+    min-width: 500px;
     width: 40vw;
     z-index: 1;
 }
