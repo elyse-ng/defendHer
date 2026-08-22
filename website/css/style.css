@@ -239,6 +239,18 @@
 
     cursor: pointer;
 }
+
+/* TUTORIAL MAIN CSS */
+.speech_bubble-container {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    z-index: 1000;
+}
 /* LEVEL 1 PAGE CSS */
 
 .dropdown {
