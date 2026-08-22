@@ -92,20 +92,6 @@ startRecordingButton.addEventListener('click', () => {
 
             console.log("BACKEND DATA:", data);
 
-            // Save the result immediately
-            localStorage.setItem("punchResult", JSON.stringify(data));
-
-            console.log("RESULT SAVED TO LOCAL STORAGE");
-
-            localStorage.setItem("punchResult", JSON.stringify(data));
-
-            console.log("RESULT SAVED");
-
-            window.location.href = "results.html";
-
-            resultDiv.textContent =
-                `Result: ${data.label} — Confidence: ${(data.confidence * 100).toFixed(1)}%`;
-
         } catch (error) {
 
             console.error("Upload failed:", error);

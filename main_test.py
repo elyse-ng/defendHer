@@ -4,6 +4,7 @@
 # can do when says "Application startup complete"
 import shutil
 import tempfile
+import json
 
 import cv2
 import numpy as np
@@ -136,12 +137,21 @@ def predict_video(video_path, action):
     class_index = list(model.classes_).index(majority_label)
     avg_confidence = frame_probs[:, class_index].mean()
 
-    return {
+    
+    prediction = {
         "action": action,
         "label": str(majority_label),
         "confidence": round(float(avg_confidence), 3),
         "frames_analyzed": len(frame_preds)
     }
+
+    output_dir = Path("./outputs")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "prediction.json"
+    with output_path.open("w", encoding="utf-8") as output_file:
+        json.dump(prediction, output_file, indent=2)
+
+    return output_path
 
 
 # Fast API
@@ -167,8 +177,11 @@ async def predict(file: UploadFile = File(...), action: str = Form(...)):
         tmp_path = tmp.name
 
     try:
-        result = predict_video(tmp_path, action)
-        return result
+        output_path = predict_video(tmp_path, action)
+        return {
+            "message": "Prediction saved",
+            "output_file": str(output_path),
+        }
     except Exception as e:
         import traceback
         traceback.print_exc()
