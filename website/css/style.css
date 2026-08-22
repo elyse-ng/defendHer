@@ -266,6 +266,13 @@
     height: auto;
     image-rendering: pixelated;
 }
+.tutorial-video{
+    position: fixed;
+    top: 25vh;
+    left: 5%;
+    width: 45vw;
+
+}
 
 /* LEVEL 1 PAGE CSS */
 
