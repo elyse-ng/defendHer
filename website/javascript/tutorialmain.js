@@ -14,7 +14,10 @@ const messages = [
     "OK now that you've watched the video",
 
     `hit start camera and record yourself<br> 
-    doing the moves you learned in the video.<br>`
+    doing the moves you learned in the video.<br>`,
+
+    `stop the camera when you're done and press<br>
+     levels to try out the real thing!`
 
 
 ];

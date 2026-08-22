@@ -278,19 +278,34 @@ width: 45vw; }
  width: 40vw;
  }
 
-.webcam-buttons{
+.webcam-buttons {
     position: fixed;
     top: 75vh;
-    left: 70%;
-    z-index: 2000;}
+    left: 90%;
+    z-index: 2000;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    width: clamp(300px, 30vw, 500px);
+
+    transform: translateX(-50%);
+}
 
 #stop-webcam, #start-webcam{
     width: clamp(80px, 10vw, 140px);
     font-family: 'Jersey 15', sans-serif;
-    background-color: #865DFF;
+    background-color: #ee85dd;
     color: white;
 }
 
+#start-recording, #stop-recording{
+    width: clamp(80px, 10vw, 140px);
+    font-family: 'Jersey 15', sans-serif;
+    background-color: #9f88e2;
+    color: white;
+}
 .instructions-container{
     position: fixed;
     top: 70vh;
