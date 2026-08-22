@@ -265,7 +265,12 @@ height: auto;
 left: 5%; 
 width: 45vw; }
 
-
+.webcam{
+ position: fixed;
+ top: 17vh;
+ left: 56%;
+ width: 40vw;
+ }
 /* LEVEL 1 PAGE CSS */
 
 .dropdown {
