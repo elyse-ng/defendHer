@@ -189,5 +189,5 @@ function nextMessage() {
     }
 }
 
-
+typeMessage();
 // Start with message 1
