@@ -136,11 +136,11 @@
 
 .tutorial-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .block-guy-text {
     display: flex;
     flex-direction: column;
@@ -196,11 +196,9 @@
     
 }
 #transition-button-container {
-    display: flex;
+    display: none;
     justify-content: center;
-    margin-top: 30vh;
-    position: fixed;
-    display:none;
+    margin-top: 2rem;
 }
 #transition-button {
     font-family: 'Jersey 15', sans-serif;
