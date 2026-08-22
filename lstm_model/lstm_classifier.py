@@ -1,4 +1,8 @@
 # reference: https://www.datacamp.com/tutorial/lstm-models
+
+# Windows: pip install torch
+# Mac: pip3 install torch
+
 import torch
 import torch.nn as nn
 import numpy as np

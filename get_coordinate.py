@@ -16,15 +16,11 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from pathlib import Path
 
-
 model_path = 'pose_landmarker_full.task';
-
 
 header = ["video_no","frame", "timestamp_ms", "good"]
 for i in range(33):
     header += [f"x{i}", f"y{i}", f"z{i}", f"visibility{i}"]
-
-excluded_landmarks = [1,2,3,4,5,6,7,8,9,10]
 
 # reference https://gist.github.com/rmeziatisab/20820a7c8cc667a1da44f22bcbcb7923
 
@@ -63,7 +59,7 @@ for action_type_folder in data_folder.iterdir():
             input_path = str(video_path)
             if action == "kick":
                 out_csv = kick_output / f"{action}_{correctness}_{video_path.stem}_kick.csv"
-            else:
+            elif action == "punch":
                 out_csv = punch_output / f"{action}_{correctness}_{video_path.stem}_punch.csv"
 
             cap = cv2.VideoCapture(input_path)
