@@ -14,6 +14,7 @@ ul.nav_bar{
     gap: 60px;
 }
 
+/*HOMEPAGE*/
 .index{
     margin: 0;/* Remove default margin */
     min-height: 100vh;
@@ -24,3 +25,5 @@ ul.nav_bar{
       #b38c9b 100%);
     background-repeat: no-repeat;
 } 
+
+/* LEVEL 1 PAGE CSS */
