@@ -28,7 +28,7 @@
 
 .nav_bar li:hover a {
     color: #865DFF;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 /*HOMEPAGE*/
@@ -107,12 +107,12 @@
 
 .dropdown:hover .drop-level {
   display: block;
-  transition: transform 0.6s;
+  transition: transform 0.2s;
 }
 .drop-level {
   display: none;
   position: absolute;
-  top: 90px;
+  top: 70px;
   right: 417px;
   /*border: 1px solid gray;*/
   background-color: #1E1E1E;
@@ -129,10 +129,11 @@
   align-items: center;
   padding: 5px;
   width: 250px;
-  border: 1px solid rgb(188, 188, 188);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .drop-level a:hover {
   color: white;
   background-color: rgb(188, 188, 188);
+  border: 1px solid rgb(188, 188, 188);
 }
