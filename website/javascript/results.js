@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = document.querySelector(".results-message");
     
     // cache-bust with current timestamp
-    source.src = "../../outputs/result_coordinate.mp4?t=" + Date.now();
+    source.src = "../../outputs/result_coordinate.webm?t=" + Date.now();
     video.load(); // forces the browser to reload the <source>
 
     fetch("../../outputs/prediction.json?t=" + Date.now())

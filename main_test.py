@@ -48,7 +48,7 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
 
     output_dir = Path('./outputs')
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_video_path = output_dir / f'result_coordinate.mp4'
+    output_video_path = output_dir / 'result_coordinate.webm'
         
 
     options = PoseLandmarkerOptions(
@@ -66,8 +66,10 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     writer = cv2.VideoWriter(
-        str(output_video_path), cv2.VideoWriter_fourcc(*'mp4v'), fps,
+        str(output_video_path), cv2.VideoWriter_fourcc(*'VP80'), fps,
         (width, height))
+    if not writer.isOpened():
+        raise ValueError('Could not create browser-compatible WebM output')
 
     print("VIDEO INFO:")
     print("FPS:", fps)
