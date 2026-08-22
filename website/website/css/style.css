@@ -2,6 +2,17 @@
     list-style-type: none;
 
 }
+ul.nav_bar{
+    font-family: 'Jersey 15', sans-serif;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
 
 .index{
     margin: 0;/* Remove default margin */
