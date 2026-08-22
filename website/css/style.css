@@ -1,8 +1,9 @@
+
+
 .nav_bar {
     list-style-type: none;
     font-weight: 400;
     font-size: 20px;
-
 }
 .nav_bar {
     font-family: 'Jersey 15', sans-serif;
@@ -273,6 +274,10 @@ width: 45vw; }
  }
 /* LEVEL 1 PAGE CSS */
 
+.level1 {
+    overflow: scroll;
+}
+
 .dropdown {
     background-color: grey;
   display: flex;
@@ -417,7 +422,104 @@ summary::before {
 	inset-block-start: 0.05rem;
 }
 
+
 .punch_tut {
+    justify-content: center;
+    width: 80vw;
+    max-width: 600px;
+}
+
+.punch_ref {
+    width: 45vw;
+    min-width: 500px;
     width: 40vw;
     height: auto;
+}
+
+.details_content {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    list-style-type: none;
+    align-items: flex-start;
+    font-size: clamp(17px, 3vw, 30px);
+    
+}
+
+/*About Page */
+/*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
+.scrollport {
+  mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+  
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  
+  display: flex;
+  gap: var(--size-10);
+  align-items: start;
+  padding: var(--size-10);
+}
+
+.scrollport > div {
+  block-size: var(--size-15);
+  aspect-ratio: var(--ratio-square);
+    background-color: rgb(255 255 255 / 50%);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+}
+
+.scrollport > div > img {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin: auto;
+    margin-top:5%;
+
+    border-radius: var(--radius-3);
+}
+
+.scrollport> div > a {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.about-container > p {
+    color: white;
+    padding-top: 2rem;
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.about-countainer {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    margin: 30vh auto 0 auto;
+    justify-content: center;
+}
+
+.about {
+    overflow: scroll;
+}
+
+.about-subheading {
+    color:white;
+    display: inline-block;
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
+#name{
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
 }
