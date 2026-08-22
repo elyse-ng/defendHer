@@ -1,6 +1,6 @@
 # pip3 install fastapi uvicorn python-multipart scikit-learn joblib opencv-python mediapipe numpy pandas
 # run main_test.py
-# type in terminal: pythom -m main_test:app --reload
+# type in terminal: python -m uvicorn main_test:app --reload
 # can do when says "Application startup complete"
 import shutil
 import tempfile
@@ -47,7 +47,7 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
 
     output_dir = Path('./outputs')
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_video_path = output_dir / f'{video_path.stem}_coordinate.mp4'
+    output_video_path = output_dir / f'result_coordinate.mp4'
         
 
     options = PoseLandmarkerOptions(
