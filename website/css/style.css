@@ -27,6 +27,15 @@
     color: inherit;
 }
 
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 .nav_bar li:hover {
     color: #865DFF;
 }
