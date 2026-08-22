@@ -317,6 +317,36 @@ width: 45vw; }
 
 /* LEVEL 1 PAGE CSS */
 
+.RESULTS {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 10px 20px;
+
+    background-color: #865DFF;
+    color: white;
+
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    text-decoration: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    left: 60%;
+    top: 40%;
+    z-index: 8;
+}
+
+.RESULTS:hover {
+    background-color: white;
+    color: #865DFF;
+}
+
 .level1 {
     overflow-x: hidden;
     overflow-y: auto;
@@ -766,3 +796,4 @@ summary::before {
     margin: 0;
     padding: 0;
 }
+
