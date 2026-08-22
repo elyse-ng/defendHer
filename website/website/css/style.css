@@ -1,0 +1,29 @@
+.nav_bar {
+    list-style-type: none;
+
+}
+ul.nav_bar{
+    font-family: 'Jersey 15', sans-serif;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+/*HOMEPAGE*/
+.index{
+    margin: 0;/* Remove default margin */
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+      #18181b 0%,
+      #1d1c20 45%,
+      #51414a 70%,
+      #b38c9b 100%);
+    background-repeat: no-repeat;
+} 
+
+/* LEVEL 1 PAGE CSS */
