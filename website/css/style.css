@@ -63,5 +63,19 @@ ul.nav_bar a:hover {
         #78656b 100%);
     background-repeat: no-repeat;
 } 
-
+#typed-text {
+    display: inline-block;
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: #f5f5f5;
+    text-align: center;
+    margin-top: 10vh;
+}
+.typed-cursor {
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: #f5f5f577;
+    text-align: center;
+    margin-top: 10vh;
+}
 /* LEVEL 1 PAGE CSS */
