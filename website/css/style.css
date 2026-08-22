@@ -65,3 +65,40 @@ ul.nav_bar a:hover {
 } 
 
 /* LEVEL 1 PAGE CSS */
+.dropdown {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown:hover .drop-level {
+  display: block;
+  transition: transform 0.6s;
+}
+.drop-level {
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 217px;
+  border: 1px solid gray;
+  background-color: #f0f0f0;
+  min-width: 120px;
+  z-index: 100;
+}
+
+
+.drop-level a {
+  height: 100%;
+  font-size: 22px;
+  color: rgb(25, 84, 31);
+  display: flex;
+  text-decoration: none; /*removes the link underline*/
+  align-items: center;
+  padding: 5px;
+  width: 250px;
+  border: 1px solid rgb(188, 188, 188);
+}
+
+.drop-level a:hover {
+  color: white;
+  background-color: rgb(188, 188, 188);
+}
