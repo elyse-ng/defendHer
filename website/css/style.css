@@ -62,7 +62,20 @@ ul.nav_bar a:hover {
         #3d363d 88%,
         #78656b 100%);
     background-repeat: no-repeat;
-} 
+}
+
+.tutorial-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.block-guy {
+    padding-bottom: 8vh;
+    position: fixed;
+    width: 3%;
+    height: auto;
+}
 #typed-text {
     display: inline-block;
     font-family: 'Jersey 15', sans-serif;
