@@ -241,7 +241,6 @@
 }
 
 /* TUTORIAL MAIN CSS */
-
 .speech-bubble-container{
  position: fixed;
  bottom: 2rem;
@@ -249,22 +248,24 @@
 transform: translateX(-50%);
  display: flex; flex-direction: column; }
 
- .speech-bubble { bottom: -1rem; 
+.speech-bubble { bottom: -1rem; 
 width: 60vw; height: 20vh; 
 image-rendering: pixelated; }
 
- .punch-guy { position: fixed
+.punch-guy { position: fixed
 ; bottom: -1rem;
  right: 67vw;
  width: 5vw; 
 height: auto;
- image-rendering: pixelated; }
+ image-rendering: pixelated;}
 
- .tutorial-video{
+.tutorial-video{
  position: fixed;
  top: 25vh; 
 left: 5%; 
 width: 45vw; }
+
+
 /* LEVEL 1 PAGE CSS */
 
 .dropdown {
