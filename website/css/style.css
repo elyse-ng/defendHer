@@ -4,26 +4,29 @@
     font-size: 20px;
 
 }
-ul.nav_bar {
+.nav_bar {
     font-family: 'Jersey 15', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-top: 2rem;
-    font-size: clamp(1rem, 5vw, 2rem);
 
+    font-size: clamp(1rem, 5vw, 2rem);
     display: flex;
     justify-content: center;
     gap: clamp(1rem, 5vw, 4rem);
     flex-wrap: wrap;
 }
 
-ul.nav_bar a {
+.nav_bar li {
+    padding: 20px;
+}
+
+.nav_bar a {
     text-decoration: none;
     color: #f5f5f5;
-  
 }
-ul.nav_bar a:hover {
+
+.nav_bar li:hover a {
     color: #865DFF;
     transition: 0.3s ease-in-out;
 }
@@ -96,7 +99,8 @@ ul.nav_bar a:hover {
 }
 /* LEVEL 1 PAGE CSS */
 .dropdown {
-    padding-bottom: 30px;
+    background-color: grey;
+
   display: flex;
   flex-direction: row;
 }
