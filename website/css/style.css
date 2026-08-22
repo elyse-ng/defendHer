@@ -801,6 +801,20 @@ summary::before {
     padding: 0;
 }
 
+.next-lesson-button {
+    background-color: #865DFF;
+    color: white;
+    width: 12rem;
+    height: 2rem;
+    margin-bottom: 3%;
+
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-decoration: none;
+    text-align: center;
+
+    border-radius: 10px;
+}
 
 .secret-level-message {
     position: absolute;
