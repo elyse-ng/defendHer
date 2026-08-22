@@ -140,4 +140,7 @@ torch.save(model.state_dict(), "kick_lstm_model.pth")
 with open("kick_label_encoder.pkl", "wb") as f:
     pickle.dump(le, f)
 
+with open("kick_model_config.pkl", "wb") as f:
+    pickle.dump({"max_len": max_len, "num_features": num_features}, f)
+
 print("\nSaved kick_lstm_model.pth and kick_label_encoder.pkl")
