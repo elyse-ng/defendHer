@@ -119,6 +119,31 @@
     }
 }
 
+.start-button {
+    display: block;
+    width: 100px;
+    padding: 8px 0;
+    margin: 1.3rem auto 0 auto;
+
+    background-color: #242126;
+    border: 2px solid #6f5963;
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+
+    transition: 0.3s ease-in-out;
+}
+
+.start-button:hover {
+    color: #865DFF;
+    border-color: #865DFF;
+}
+
 /* TUTORIAL */
 .tutorial,
 .level1,
