@@ -26,10 +26,14 @@ document.getElementById('closeBtn').addEventListener('click', () => {
 document.addEventListener('mouseup', (e) => {
     if (!isDragging) return;
     isDragging = false;
+    
     const distanceMoved = e.clientY - startY;
+    
     if (distanceMoved > 100) {
         box.classList.add('expanded');
+        box.style.height = ''; // let CSS class control final height
     } else {
+        box.classList.remove('expanded');
         box.style.height = '150px';
     }
 });
