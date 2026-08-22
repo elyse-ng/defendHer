@@ -38,8 +38,10 @@ options = PoseLandmarkerOptions(
 data_folder = Path("trial_videos/data")
 kick_output = Path("kick_csvs")
 punch_output = Path("punch_csvs")
+chop_output = Path("chop_csvs")
 kick_output.mkdir(exist_ok=True)
 punch_output.mkdir(exist_ok=True)
+chop_output.mkdir(exist_ok=True)
 
 # Load input for each video in the folder
 # Use OpenCV’s VideoCapture to load the input video.
@@ -61,6 +63,8 @@ for action_type_folder in data_folder.iterdir():
                 out_csv = kick_output / f"{action}_{correctness}_{video_path.stem}_kick.csv"
             elif action == "punch":
                 out_csv = punch_output / f"{action}_{correctness}_{video_path.stem}_punch.csv"
+            elif action == "chop":
+                out_csv = chop_output / f"{action}_{correctness}_{video_path.stem}_chop.csv"
 
             cap = cv2.VideoCapture(input_path)
 
@@ -111,10 +115,11 @@ for action_type_folder in data_folder.iterdir():
                             row += [""] * (33 * 4)
 
                         writer.writerow(row)
-            cap.release()
+        cap.release()
 
 all_kick_csv = list(kick_output.glob("*.csv"))
 all_punch_csv = list(punch_output.glob("*.csv"))
+all_chop_csv = list(chop_output.glob("*.csv"))
 
 if all_kick_csv:
     df_kick = pd.concat([pd.read_csv(f) for f in all_kick_csv], ignore_index=True)
@@ -123,3 +128,7 @@ if all_kick_csv:
 if all_punch_csv:
     df_punch = pd.concat([pd.read_csv(f) for f in all_punch_csv], ignore_index=True)
     df_punch.to_csv(punch_output / "all_punch.csv", index=False)
+
+if all_chop_csv:
+    df_chop = pd.concat([pd.read_csv(f) for f in all_chop_csv], ignore_index=True)
+    df_chop.to_csv(chop_output / "all_chop.csv", index=False)

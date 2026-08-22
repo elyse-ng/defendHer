@@ -66,12 +66,23 @@
                 LEVEL 1: PUNCH!
                 THE BEST DEFENCE IS OFFENCE!!
             </h2>
-            <video class="punch_ref" controls>
+            <div class="video-row">
+                <video class="punch_ref" controls>
                 <source src="../../chanthanatutorials/punch_tut.mp4" type="video/mp4">
-            </video>
+                </video>
+                <video class="lvlwebcam" id="webcam" autoplay></video>
+                <div  class="lvl-buttons">
+                    <button id="stop-webcam">STOP CAMERA</button>
+                    <button id="start-webcam">START CAMERA</button>
+                </div>
+            </div>
         </div>
-
+        <div class="lvl-bubble-container">
+            <img src="../assets/long_speech_bubble.png" class="lvl-bubble" alt="TALKING BUBBLE">
+            <img src="../assets/punch.png" class="punch-lvlguy" alt="LITTLE PUNCHING GUY">
+        </div>
     </div>
     <script src="../javascript/level1.js"></script>
+    <script src="../javascript/tutorialmain.js"></script>
 </body>
 </html>
