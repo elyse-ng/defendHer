@@ -597,6 +597,7 @@ summary::before {
 .scrollport > div {
   margin-left: 2%;
   margin-right: 2%;
+  margin-bottom: 4%;
   block-size: var(--size-15);
   aspect-ratio: var(--ratio-square);
   flex: 0 0 380px;
