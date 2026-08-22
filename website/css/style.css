@@ -50,4 +50,18 @@ ul.nav_bar a:hover {
     text-align: center;
     margin-top: 10vh;
 }
+/* TUTORIAL */
+.tutorial,
+.level1,
+.about {
+    margin: 0;/* Remove default margin */
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+        #19191a 0%,
+        #222125 75%,
+        #3d363d 88%,
+        #78656b 100%);
+    background-repeat: no-repeat;
+} 
+
 /* LEVEL 1 PAGE CSS */
