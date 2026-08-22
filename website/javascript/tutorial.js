@@ -30,7 +30,8 @@ document.getElementById("yes-button").addEventListener("click", function() {
         strings: [
             `WELL you're in luck! Here at defendHer,<br>
             we teach YOU how to defend yourself<br>
-            through self-defence modules. Would you like to begin?`
+            through self-defence modules. <br>
+            Would you like to begin?`
         ],
 
         typeSpeed: 30,
