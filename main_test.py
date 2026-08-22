@@ -1,5 +1,7 @@
 # pip3 install fastapi uvicorn python-multipart scikit-learn joblib opencv-python mediapipe numpy pandas
-
+# run main_test.py
+# type in terminal: pythom -m main_test:app --reload
+# can do when says "Application startup complete"
 import shutil
 import tempfile
 
