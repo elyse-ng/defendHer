@@ -1,5 +1,4 @@
 
-
 .nav_bar {
     list-style-type: none;
     font-weight: 400;
@@ -55,6 +54,7 @@
       #51414a 70%,
       #b38c9b 100%);
     background-repeat: no-repeat;
+    overflow: hidden;
 } 
 
 .title-container {
@@ -318,7 +318,8 @@ width: 45vw; }
 /* LEVEL 1 PAGE CSS */
 
 .level1 {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .dropdown {
@@ -681,4 +682,71 @@ summary::before {
     font-family: 'Jersey 15', sans-serif;
     text-align: center;
     color: black;
+}
+
+/* RESULTS VIDEOS */
+
+.results-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+
+    width: 90%;
+    margin: 0rem auto;
+}
+
+.punch-ref-result,
+.user-output {
+    width: 45%;
+    max-width: 600px;
+
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+
+    background-color: black;
+}
+
+
+/* RESULTS SPEECH BUBBLE */
+
+.results-bubble-container {
+    width: 90%;
+    margin: 2rem auto 0 auto;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 1rem;
+}
+
+.results-guy {
+    width: clamp(50px, 5vw, 100px);
+    height: auto;
+    padding-bottom: 5rem;
+    image-rendering: pixelated;
+}
+
+.results-bubble {
+    width: 70%;
+    max-width: 900px;
+
+    height: clamp(100px, 15vh, 160px);
+
+    image-rendering: pixelated;
+    padding-bottom: 6rem;
+}
+
+.result-title {
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 7vw, 5rem);
+    color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }

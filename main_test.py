@@ -111,7 +111,7 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
             writer.write(cv2.cvtColor(annotated, cv2.COLOR_RGB2BGR))
 
     cap.release()
-    writer.close()
+    writer.release()
 
     if not rows:
         raise ValueError("No pose detected in any frame of the video")
