@@ -79,16 +79,5 @@ document.getElementById("transition-button").addEventListener("click", function(
 
     typed.destroy();
 
-    // Next dialogue
-    typed = new Typed("#typed-text", {
-        strings: [
-            "PERFECT! LET'S BEGIN.",
-            "YOUR FIRST SELF-DEFENCE MODULE STARTS NOW!"
-        ],
-
-        typeSpeed: 80,
-        backSpeed: 20,
-        backDelay: 1500,
-        loop: false
-    });
+    //
 });
