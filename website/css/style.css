@@ -241,39 +241,16 @@
 }
 
 /* TUTORIAL MAIN CSS */
-.speech-bubble-container{
+.speech_bubble-container {
     position: fixed;
-    bottom: 2rem;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-
-}
-
-.speech-bubble {
-    bottom: -1rem;
-    width: 60vw;
-    height: 20vh;
-    image-rendering: pixelated;
-}
-
-.punch-guy {
-    position: fixed;
-    bottom: -1rem;
-    right: 67vw;
-    width: 5vw;
+    width: 80%;
+    max-width: 600px;
     height: auto;
-    image-rendering: pixelated;
+    z-index: 1000;
 }
-.tutorial-video{
-    position: fixed;
-    top: 25vh;
-    left: 5%;
-    width: 45vw;
-
-}
-
 /* LEVEL 1 PAGE CSS */
 
 .dropdown {
@@ -421,6 +398,6 @@ summary::before {
 }
 
 .punch_tut {
-    width: 50vw;
+    width: 40vw;
     height: auto;
 }
