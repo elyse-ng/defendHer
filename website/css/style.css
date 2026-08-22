@@ -713,6 +713,7 @@ summary::before {
 /* RESULTS SPEECH BUBBLE */
 
 .results-bubble-container {
+    position: relative;
     width: 90%;
     margin: 2rem auto 0 auto;
 
@@ -740,6 +741,21 @@ summary::before {
 
     image-rendering: pixelated;
     padding-bottom: 6rem;
+}
+
+.results-message {
+    position: absolute;
+    width: min(55%, 650px);
+    margin: 0;
+    left: 45%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    color: white;
 }
 
 .result-title {
