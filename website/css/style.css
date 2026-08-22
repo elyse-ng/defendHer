@@ -93,6 +93,7 @@ ul.nav_bar a:hover {
 }
 /* LEVEL 1 PAGE CSS */
 .dropdown {
+    padding-bottom: 30px;
   display: flex;
   flex-direction: row;
 }
@@ -105,13 +106,12 @@ ul.nav_bar a:hover {
   display: none;
   position: absolute;
   top: 90px;
-  right: 217px;
-  border: 1px solid gray;
-  background-color: #f0f0f0;
+  right: 417px;
+  /*border: 1px solid gray;*/
+  background-color: #1E1E1E;
   min-width: 120px;
   z-index: 100;
 }
-
 
 .drop-level a {
   height: 100%;
