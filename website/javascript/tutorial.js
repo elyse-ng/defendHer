@@ -5,5 +5,5 @@ var typed = new Typed("#typed-text", {
     ],
     typeSpeed: 100,
     backSpeed: 30,
-    loop: true
+    backDelay: 1000,
 });
