@@ -214,6 +214,7 @@
     cursor: pointer;
 }
 /* LEVEL 1 PAGE CSS */
+
 .dropdown {
     background-color: grey;
   display: flex;
@@ -256,4 +257,43 @@
 .drop-level img {
     padding-right: 10px;
     image-rendering: pixelated;
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+.camera_slot {
+    margin-top: 50px;
+    width: 60vw;
+    min-width: 600px;
+    height: 80vh;
+    background-color: grey;
+}
+
+.expand-box {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    background-color:#b38c9b;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dragger {
+    background-color: red;
+    cursor:grab;
+}
+
+.expand-box.expanded {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+
 }
