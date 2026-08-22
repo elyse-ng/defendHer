@@ -1,3 +1,6 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
 .nav_bar {
     list-style-type: none;
     font-weight: 400;
@@ -415,4 +418,71 @@ summary::before {
 .punch_tut {
     width: 40vw;
     height: auto;
+/*About Page */
+/*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
+.scrollport {
+  mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+  
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  
+  display: flex;
+  gap: var(--size-10);
+  align-items: start;
+  padding: var(--size-10);
+}
+
+.scrollport > div {
+  block-size: var(--size-15);
+  aspect-ratio: var(--ratio-square);
+    background-color: rgb(255 255 255 / 50%);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+}
+
+.scrollport > div > img {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin: auto;
+    border-radius: var(--radius-3);
+}
+
+.scrollport> div > a {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.about-container > p {
+    color: white;
+    padding-top: 2rem;
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.about-countainer {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    margin: 30vh auto 0 auto;
+    justify-content: center;
+}
+
+.about {
+    overflow: scroll;
+}
+
+.about-subheading {
+    color:white;
+    display: inline-block;
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
+    margin-top: 10vh;
+}
+#name{
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
 }
