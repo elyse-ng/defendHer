@@ -60,9 +60,8 @@ startRecordingButton.addEventListener('click', () => {
     };
 
     mediaRecorder.onstop = async () => {
-
-    const videoBlob = new Blob(recordedChunks, {
-        type: "video/webm"
+        const videoBlob = new Blob(recordedChunks, {
+            type: "video/webm"
     });
 
     console.log("Recording created:", videoBlob);
@@ -88,16 +87,26 @@ startRecordingButton.addEventListener('click', () => {
 
         console.log("Backend response:", data);
 
-        resultDiv.textContent =
-            `Result: ${data.label} — Confidence: ${(data.confidence * 100).toFixed(1)}%`;
+        if (data.error) {
+            resultDiv.textContent = `Error: ${data.error}`;
+            resultDiv.style.color = "red";
+        } else {
+            resultDiv.textContent =
+                `${data.label.toUpperCase()} — ${(data.confidence * 100).toFixed(1)}% confidence`;
+
+            resultDiv.style.color =
+                data.label === "good" ? "green" : "red";
+        }
 
     } catch (error) {
 
         console.error("Upload failed:", error);
+        resultDiv.textContent = "Could not analyse video.";
+        resultDiv.style.color = "red";
 
     }
 
-};
+    };
 
     mediaRecorder.start();
 
