@@ -309,30 +309,82 @@
     background-color: grey;
 }
 
-.expand-box {
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 50px;
-    border-radius: 0px 0px 12px 12px;
-    background-color:#b38c9b;
-    overflow: hidden;
-    z-index: 10;
+
+
+/*example*/
+/* Page Style */
+/*body {
+	box-sizing: border-box;
+	min-block-size: 100vb;
+	padding: 2rem;
+	font-family: sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	color: hsl(261deg 100% 25%);
+	background: linear-gradient(
+		120deg,
+		hsl(260deg 80% 50%),
+		hsl(0deg 100% 50%)
+	);
+}*/
+
+details {
+	position: relative;
+	max-inline-size: 40rem;
+	padding: 1rem;
+	margin-block: 1rem 0;
+	margin-inline: auto;
+	background-image: linear-gradient(
+		to top left,
+		hsl(260deg 80% 80%) 0,
+		hsl(0deg 100% 95%)
+	);
+	border: 1px solid hsl(260deg 100% 95%);
+	border-radius: 0.3rem;
 }
 
-.dragger {
-    background-color: red;
-    cursor: grab;
+summary {
+    font-size: 40px;
+    font-family: 'Jersey 15', sans-serif;;
+
+	position: relative;
+	font-weight: 700;
+	cursor: pointer;
 }
 
-.expand-box.expanded {
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
+/* Demo Code */
+.details::details-content {
+	display: block;
+	margin-inline: 2rem;
+	block-size: 0;
+	overflow: hidden;
+	transition-property: block-size, content-visibility;
+	transition-duration: 0.5s;
 }
 
+.details[open]::details-content {
+	/* Fallback for browsers that don't support calc-size() function */
+	block-size: auto;
+	
+	/* calc-size() function allows transition to height: auto; */
+	block-size: calc-size(auto, size);
+}
+
+/* List Item ::marker supports only some CSS properties, so we're using ::before pseudo-element instead */
+/*summary::marker {
+	content: '»';
+	content: none;
+}
+
+summary::before {
+	content: '»';
+	position: absolute;
+	inset-inline-start: 1rem;
+	inset-block-start: -0.05rem;
+	transition: rotate 0.2s;
+}*/
+
+.details[open] summary::before {
+	rotate: 90deg;
+	inset-block-start: 0.05rem;
+}
