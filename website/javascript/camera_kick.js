@@ -3,7 +3,6 @@ const stopButton = document.getElementById('stop-webcam');
 const startButton = document.getElementById('start-webcam');
 
 const startRecordingButton = document.getElementById('start-recording');
-const stopRecordingButton = document.getElementById('stop-recording');
 
 const resultDiv = document.getElementById("result");
 
@@ -45,6 +44,11 @@ startButton.addEventListener('click', () => {
 
 startRecordingButton.addEventListener('click', () => {
 
+    if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+        return;
+    }
+
     if (!stream) {
         alert("Please start the camera first.");
         return;
@@ -61,6 +65,9 @@ startRecordingButton.addEventListener('click', () => {
     };
 
     mediaRecorder.onstop = async () => {
+
+        startRecordingButton.textContent = "START RECORDING";
+        startRecordingButton.classList.remove("recording");
 
         const videoBlob = new Blob(recordedChunks, {
             type: "video/webm"
@@ -101,18 +108,10 @@ startRecordingButton.addEventListener('click', () => {
     };
 
     mediaRecorder.start();
+    startRecordingButton.textContent = "STOP RECORDING";
+    startRecordingButton.classList.add("recording");
 
     console.log("Recording started!");
 
     
-});
-
-stopRecordingButton.addEventListener('click', () => {
-
-    if (mediaRecorder && mediaRecorder.state === "recording") {
-        mediaRecorder.stop();
-
-        console.log("Recording stopped!");
-    }
-
 });

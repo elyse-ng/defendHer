@@ -300,11 +300,15 @@ width: 45vw; }
     color: white;
 }
 
-#start-recording, #stop-recording{
+#start-recording{
     width: clamp(80px, 10vw, 140px);
     font-family: 'Jersey 15', sans-serif;
     background-color: #9f88e2;
     color: white;
+}
+
+#start-recording.recording {
+    background-color: #ee85dd;
 }
 .instructions-container{
     position: fixed;
