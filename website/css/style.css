@@ -358,7 +358,10 @@ width: 45vw; }
 }
 
 .lvl_ttl {
+    text-align: center;
     color: white;
+    font-size: 5vw;
+    font-family: 'Jersey 15', sans-serif;
 }
 
 
@@ -379,11 +382,16 @@ width: 45vw; }
 		hsl(0deg 100% 50%)
 	);
 }*/
+.example {
+    width: 90%;
+    max-width: 1100px;
+}
 
 details {
 	position: relative;
 	/*max-inline-size: 40rem;*/
 	padding: 1rem;
+    width: 100%;
     color:#E4FF;
 	margin-block: 1rem 0;
 	margin-inline: auto;
@@ -465,6 +473,7 @@ summary::before {
 }
 
 .steps {
+    font-family: 'Jersey 15', sans-serif;
     list-style-type: none;
     align-items: flex-start;
     font-size: clamp(17px, 3vw, 30px);
@@ -525,16 +534,18 @@ image-rendering: pixelated; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     gap: 30px;
 }
 
 .video-row {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1100px;
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
-    width: 100%;
+    width: 90%;
 }
 
 .webcam-group {
