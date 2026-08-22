@@ -1,6 +1,6 @@
 {
-  "action": "chop",
+  "action": "punch",
   "label": "good",
-  "confidence": 0.771,
-  "frames_analyzed": 185
+  "confidence": 0.568,
+  "frames_analyzed": 132
 }
