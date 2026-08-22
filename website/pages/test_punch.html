@@ -1,0 +1,51 @@
+<body data-action="punch">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Punch Form Checker</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 500px;
+      margin: 60px auto;
+      text-align: center;
+    }
+    video {
+      max-width: 100%;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+      color: #666;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload a punch video</h1>
+  <input type="file" id="videoInput" accept="video/*">
+
+  <video id="preview" controls style="display:none;"></video>
+
+  <br>
+  <button id="submitBtn">Analyze</button>
+
+  <div id="loading">Analyzing video... this may take a moment.</div>
+  <div id="result"></div>
+
+<script src="../javascript/bfend.js"></script>
+</body>
+</html>
