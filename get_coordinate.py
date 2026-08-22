@@ -10,14 +10,19 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
+model_path = 'pose_landmarker_full.task';
+
 kick_csv = "kick_coordinates.csv" # CSV for kick coordinates
-header = ["frame", "timestamp_ms", "landmark_index", "x", "y", "z", "visibility", "presence"]
 
-
+excluded_landmarks = [1,2,3,4,5,6,7,8,9,10]
+header = ["video_no","frame", "timestamp_ms"]
+for i in range(33):
+    if i not in excluded_landmarks:
+        header += [f"x{i}", f"y{i}", f"z{i}", f"visibility{i}"]
 
 # reference https://gist.github.com/rmeziatisab/20820a7c8cc667a1da44f22bcbcb7923
 
-model_path = 'pose_landmarker_full.task';
+
 
 BaseOptions = python.BaseOptions
 PoseLandmarker = python.vision.PoseLandmarker
@@ -72,16 +77,18 @@ with open(kick_csv, mode="w", newline="") as f:
             # Compute the frame timestamp and cast it to int as required by the detect_for_video function
             frame_timestamp_ms = int(1000*frame_index / fps)
             result = landmarker.detect_for_video(mp_image, frame_timestamp_ms)
-            print(frame_index)
+            row = ["1", frame_index, frame_timestamp_ms]
 
+            #pose landmarks for each frame
             if result.pose_landmarks:
-                landmarks = result.pose_landmarks[0]  # first detected person
-                for i, lm in enumerate(landmarks):
-                    writer.writerow([frame_index, frame_timestamp_ms, i, lm.x, lm.y, lm.z, lm.visibility, lm.presence])
+                landmarks = result.pose_landmarks[0]
+                for lm in landmarks:
+                    if lm not in excluded_landmarks:
+                        row += [lm.x, lm.y, lm.z, lm.visibility]
             else:
-                # no person detected this frame
-                writer.writerow([frame_index, frame_timestamp_ms, "", "", "", "", "", ""])
+                row += [""] * (33 * 4)
 
+            writer.writerow(row)
             print(frame_index)
 
 
