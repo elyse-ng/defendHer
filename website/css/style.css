@@ -469,14 +469,13 @@ summary::before {
 
 .punch_tut {
     justify-content: center;
-    width: 80vw;
-    max-width: 600px;
+    width: 100%;
 }
 
 .punch_ref {
-    width: 45vw;
-    min-width: 500px;
-    width: 40vw;
+    flex: 1 1 350px;
+    max-width: 45vw;
+    min-width: 300px;
     height: auto;
 }
 
@@ -533,6 +532,8 @@ summary::before {
 }
 
 .lvl-bubble-container {
+    width: 90%;
+    max-width: 1100px;
     position: relative;
     bottom: 1rem;
     left: 50%;
@@ -569,12 +570,14 @@ image-rendering: pixelated; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 350px;
+    min-width: 300px;
     gap: 10px;
 }
 
 .lvlwebcam {
     min-width: 500px;
-    width: 40vw;
+    max-width: 100%;
     z-index: 1;
 }
 /*About Page */

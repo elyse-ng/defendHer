@@ -59,8 +59,8 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
         raise ValueError("Could not open video file")
 
     fps = cap.get(cv2.CAP_PROP_FPS)
-    if not fps or fps <= 0:
-        fps = 30
+    
+    fps = 30
 
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -68,6 +68,10 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
         str(output_video_path), cv2.VideoWriter_fourcc(*'mp4v'), fps,
         (width, height))
 
+    print("VIDEO INFO:")
+    print("FPS:", fps)
+    print("Width:", width)
+    print("Height:", height)
 
     rows = []
 
@@ -110,7 +114,7 @@ def extract_landmarks_from_video(video_path, pose_model_path="pose_landmarker_fu
     if not rows:
         raise ValueError("No pose detected in any frame of the video")
 
-    return rows, output_video_path
+    return rows
 
 
 def predict_video(video_path, action):
