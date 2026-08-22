@@ -13,12 +13,25 @@
     
 <ul class="nav_bar">
     <li><a href="index.html">Home</a></li>
-    <li><a href="#">Levels</a></li> <!--PROBABLY FIX THIS BECAUSE ITS NOT ACTUAL LEVELS PAGE-->
+    <li class="dropdown">
+        <a href="">Levels</a>
+        <div class="drop-level">
+            <a href="level1.html">Lvl 1: BLOCK</a>
+            <a href="level2">Lvl 2: PUNCH</a>
+            <a href="level3">Lvl 3: KICK</a>
+        </div>
+    </li> <!--PROBABLY FIX THIS BECAUSE ITS NOT ACTUAL LEVELS PAGE-->
     <li><a href="tutorial.html">Tutorial</a></li>
     <li><a href="about.html">About</a></li>
 </ul>
 
- 
+<div class="tutorial-content">
+    <img src="../assets/defend.png" alt="DEFEND MYSELF!!!" class="block-guy">
+    <h1><span id="typed-text"></span></h1>
+</div>
+
+<script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+<script src="../javascript/tutorial.js"></script>
 
 </body>
 </html>

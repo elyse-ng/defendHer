@@ -4,28 +4,35 @@
     font-size: 20px;
 
 }
-ul.nav_bar {
+.nav_bar {
     font-family: 'Jersey 15', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    padding-top: 2rem;
-    font-size: clamp(1rem, 5vw, 2rem);
 
+    font-size: clamp(1rem, 5vw, 2rem);
     display: flex;
     justify-content: center;
     gap: clamp(1rem, 5vw, 4rem);
     flex-wrap: wrap;
 }
 
-ul.nav_bar a {
-    text-decoration: none;
+.nav_bar li {
     color: #f5f5f5;
-  
+    padding: 20px;
 }
-ul.nav_bar a:hover {
+
+.nav_bar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav_bar li:hover {
     color: #865DFF;
-    transition: 0.3s ease-in-out;
+}
+.nav_bar li:hover {
+
+    transition: 0.2s ease-in-out;
 }
 
 /*HOMEPAGE*/
@@ -62,6 +69,79 @@ ul.nav_bar a:hover {
         #3d363d 88%,
         #78656b 100%);
     background-repeat: no-repeat;
-} 
+    overflow: hidden;
+}
 
+.tutorial-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.block-guy {
+    padding-bottom: 8vh;
+    position: fixed;
+
+    width: 3%;
+    height: auto;
+   image-rendering: pixelated; /* Ensures the pixel art is VERY CLEAR HURRAY */
+}
+#typed-text {
+    display: inline-block;
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: #f5f5f5;
+    text-align: center;
+    margin-top: 10vh;
+}
+.typed-cursor {
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+    color: #f5f5f577;
+    text-align: center;
+    margin-top: 10vh;
+}
 /* LEVEL 1 PAGE CSS */
+.dropdown {
+    background-color: grey;
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown:hover .drop-level {
+  display: block;
+  transition: transform 0.2s;
+}
+
+.drop-level {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 417px;
+  background-color: #1E1E1E;
+  min-width: 120px;
+  z-index: 100;
+}
+
+.drop-level a {
+  height: 100%;
+  font-size: 22px;
+  color: white;
+  display: flex;
+  text-decoration: none; /*removes the link underline*/
+  padding: 15px;
+  width: 150px;
+  border: 1px #1E1E1E;
+
+}
+
+.drop-level a:hover {
+  color: white;
+  background-color: rgb(188, 188, 188);
+  border: 1px #1E1E1E;
+}
+
+.drop-level img {
+    padding-right: 10px;
+    image-rendering: pixelated;
+}
