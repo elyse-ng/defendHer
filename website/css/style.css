@@ -1,0 +1,67 @@
+.nav_bar {
+    list-style-type: none;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+ul.nav_bar {
+    font-family: 'Jersey 15', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 2rem;
+    font-size: clamp(1rem, 5vw, 2rem);
+
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 5vw, 4rem);
+    flex-wrap: wrap;
+}
+
+ul.nav_bar a {
+    text-decoration: none;
+    color: #f5f5f5;
+  
+}
+ul.nav_bar a:hover {
+    color: #865DFF;
+    transition: 0.3s ease-in-out;
+}
+
+/*HOMEPAGE*/
+.index{
+    margin: 0;/* Remove default margin */
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+      #18181b 0%,
+      #1d1c20 45%,
+      #51414a 70%,
+      #b38c9b 100%);
+    background-repeat: no-repeat;
+} 
+
+.title {
+    display:flex;
+    justify-content: center;
+    padding-top: 20vh;
+    font-family: 'Jersey 15', sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: #f5f5f5;
+    text-align: center;
+    margin-top: 10vh;
+}
+/* TUTORIAL */
+.tutorial,
+.level1,
+.about {
+    margin: 0;/* Remove default margin */
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+        #19191a 0%,
+        #222125 75%,
+        #3d363d 88%,
+        #78656b 100%);
+    background-repeat: no-repeat;
+} 
+
+/* LEVEL 1 PAGE CSS */
