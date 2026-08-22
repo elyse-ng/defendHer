@@ -1,11 +1,9 @@
-@import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/normalize.min.css";
+
 
 .nav_bar {
     list-style-type: none;
     font-weight: 400;
     font-size: 20px;
-
 }
 .nav_bar {
     font-family: 'Jersey 15', sans-serif;
@@ -270,6 +268,7 @@ width: 45vw; }
 
 
 /* LEVEL 1 PAGE CSS */
+
 .level1 {
     overflow: scroll;
 }
@@ -373,21 +372,6 @@ details {
 	border-radius: 0.3rem;
 }
 
-.details_content {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.steps {
-    list-style-type: none;
-    align-items: flex-start;
-    font-size: clamp(17px, 3vw, 30px);
-    
-}
-
 summary {
     color: white;
     font-size: 40px;
@@ -398,6 +382,7 @@ summary {
 
 /* Demo Code */
 .details::details-content {
+	display: block;
 	margin-inline: 2rem;
 	block-size: 0;
 	overflow: hidden;
@@ -432,6 +417,7 @@ summary::before {
 	inset-block-start: 0.05rem;
 }
 
+
 .punch_tut {
     justify-content: center;
     width: 80vw;
@@ -441,7 +427,25 @@ summary::before {
 .punch_ref {
     width: 45vw;
     min-width: 500px;
+    width: 40vw;
+    height: auto;
 }
+
+.details_content {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    list-style-type: none;
+    align-items: flex-start;
+    font-size: clamp(17px, 3vw, 30px);
+    
+}
+
 /*About Page */
 /*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
 .scrollport {
