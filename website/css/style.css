@@ -242,14 +242,18 @@
 }
 
 /* TUTORIAL MAIN CSS */
-.speech-bubble-container{
- position: fixed;
- bottom: 2rem;
- left: 50%; 
-transform: translateX(-50%);
- display: flex; flex-direction: column; }
+.speech-bubble-container {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
 
-.speech-bubble { bottom: -1rem; 
+    display: flex;
+    flex-direction: column;
+}
+
+.speech-bubble {
+bottom: -1.5rem; 
 width: 60vw; height: 20vh; 
 image-rendering: pixelated; }
 
@@ -272,6 +276,19 @@ width: 45vw; }
  left: 56%;
  width: 40vw;
  }
+
+.webcam-buttons{
+    position: fixed;
+    top: 75vh;
+    left: 70%;}
+
+#stop-webcam, #start-webcam{
+    width: clamp(80px, 10vw, 140px);
+    font-family: 'Jersey 15', sans-serif;
+    background-color: #865DFF;
+    color: white;
+}
+
 /* LEVEL 1 PAGE CSS */
 
 .level1 {
