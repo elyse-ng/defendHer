@@ -24,10 +24,16 @@
         Levels
     </a>
         <div class="drop-level">
-            <a href="level1.html">Lvl 1: BLOCK</a>
-            <a href="level2">Lvl 2: PUNCH</a>
-            <a href="level3">Lvl 3: KICK</a>
-        </div>
+            <a href="level1.html">
+                <img src="../assets/lock.png">
+                Lvl 1: BLOCK</a>
+            <a href="level2.html">
+                <img src="../assets/lock.png">
+                Lvl 2: PUNCH</a>
+            <a href="level3.html">
+                <img src="../assets/lock.png">
+                Lvl 3: KICK</a>
+        </div>  
     </li> <!--PROBABLY FIX THIS BECAUSE ITS NOT ACTUAL LEVELS PAGE-->
     <li>
         <a href="tutorialmain.html">
@@ -45,7 +51,16 @@
 
 <video class="tutorial-video" controls>
     <source src="../../chanthanatutorials/punch_tut.mp4" type="video/mp4">
-</video>>
+</video>
+
+
+<video class="webcam" id="webcam" autoplay></video>
+
+<div  class="webcam-buttons">
+    <button id="stop-webcam">STOP CAMERA</button>
+    <button id="start-webcam">START CAMERA</button>
+</div>
+
 
 
 
@@ -54,5 +69,7 @@
     <img src="../assets/punch.png" class="punch-guy" alt="LITTLE PUNCHING GUY">
 </div>
 
+<script src="../javascript/tutorialmain.js"></script>
 
 </body>
+</html>

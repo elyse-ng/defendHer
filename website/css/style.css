@@ -1,8 +1,9 @@
+
+
 .nav_bar {
     list-style-type: none;
     font-weight: 400;
     font-size: 20px;
-
 }
 .nav_bar {
     font-family: 'Jersey 15', sans-serif;
@@ -241,20 +242,60 @@
 }
 
 /* TUTORIAL MAIN CSS */
-.speech_bubble-container {
+.speech-bubble-container {
     position: fixed;
-    top: 10%;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
 }
+
+.speech-bubble {
+bottom: -1.5rem; 
+width: 60vw; height: 20vh; 
+image-rendering: pixelated; }
+
+.punch-guy { position: fixed
+; bottom: -1rem;
+ right: 67vw;
+ width: 5vw; 
+height: auto;
+ image-rendering: pixelated;}
+
+.tutorial-video{
+ position: fixed;
+ top: 25vh; 
+left: 5%; 
+width: 45vw; }
+
+.webcam{
+ position: fixed;
+ top: 17vh;
+ left: 56%;
+ width: 40vw;
+ }
+
+.webcam-buttons{
+    position: fixed;
+    top: 75vh;
+    left: 70%;}
+
+#stop-webcam, #start-webcam{
+    width: clamp(80px, 10vw, 140px);
+    font-family: 'Jersey 15', sans-serif;
+    background-color: #865DFF;
+    color: white;
+}
+
 /* LEVEL 1 PAGE CSS */
 
+.level1 {
+    overflow: scroll;
+}
+
 .dropdown {
-    background-color: grey;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -397,7 +438,118 @@ summary::before {
 	inset-block-start: 0.05rem;
 }
 
+
 .punch_tut {
+    justify-content: center;
+    width: 80vw;
+    max-width: 600px;
+}
+
+.punch_ref {
+    width: 45vw;
+    min-width: 500px;
     width: 40vw;
     height: auto;
+}
+
+.details_content {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    list-style-type: none;
+    align-items: flex-start;
+    font-size: clamp(17px, 3vw, 30px);
+    
+}
+
+/*About Page */
+/*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
+.scrollport {
+  mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+  
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  
+  display: flex;
+  gap: var(--size-10);
+  align-items: start;
+  padding: var(--size-10);
+}
+
+.scrollport > div {
+  margin-left: 2%;
+  margin-right: 2%;
+  block-size: var(--size-15);
+  aspect-ratio: var(--ratio-square);
+  flex: 0 0 380px;
+  padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4%;
+  box-shadow: var(--shadow-4);
+}
+
+.scrollport > div > img {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin: auto;
+    margin-top:5%;
+
+    border-radius: 5%;
+}
+
+.scrollport> div > a {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    
+}
+
+.about-container > p {
+    color: white;
+    padding-top: 2rem;
+    width: 50%;
+    margin-inline: auto;
+    text-align: center;
+    
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+}
+
+.about-countainer {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    margin: 30vh auto 0 auto;
+    justify-content: center;
+}
+
+.about {
+    overflow: scroll;
+}
+
+.about-subheading {
+    color:white;
+    display: inline-block;
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
+#name{
+    font-family: 'Jersey 15', sans-serif;
+    text-align: center;
+    color: black;
 }
