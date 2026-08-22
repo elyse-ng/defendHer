@@ -247,7 +247,7 @@
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-
+    z-index: 100;
     display: flex;
     flex-direction: column;
 }
@@ -271,6 +271,7 @@ left: 5%;
 width: 45vw; }
 
 .webcam{
+    z-index: 1;
  position: fixed;
  top: 17vh;
  left: 56%;
@@ -351,7 +352,9 @@ width: 45vw; }
 }
 
 .second_hlf {
-    padding: 0px 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 .lvl_ttl {
@@ -458,6 +461,7 @@ summary::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .steps {
@@ -467,6 +471,83 @@ summary::before {
     
 }
 
+.lvl-bubble-container {
+    position: relative;
+    bottom: 1rem;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.lvl-bubble {
+    height: auto;
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+.lvl-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content:center;
+    width: 100%;
+}
+
+.punch-lvlguy {
+    position: fixed;
+    bottom: -1rem;
+    right: 67vw;
+    width: 5vw; 
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.lvl-bubble-container {
+    position: relative;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.lvl-bubble {
+bottom: -1.5rem; 
+width: 60vw; height: 20vh; 
+image-rendering: pixelated; }
+
+.main_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.video-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+
+.webcam-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.lvlwebcam {
+    width: 40vw;
+    z-index: 1;
+}
 /*About Page */
 /*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
 .scrollport {
