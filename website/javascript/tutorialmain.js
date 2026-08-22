@@ -15,8 +15,9 @@ navigator.mediaDevices.getUserMedia({ video: true })
 .then(mediaStream => {
     stream = mediaStream;
     webcam.srcObject = stream;
-}).catch((error) => {
-    console.error(error);
+})
+.catch(error => {
+    console.error("Camera error:", error);
 });
 
 stopButton.addEventListener('click', () => {
@@ -60,8 +61,9 @@ startRecordingButton.addEventListener('click', () => {
     };
 
     mediaRecorder.onstop = async () => {
-        const videoBlob = new Blob(recordedChunks, {
-            type: "video/webm"
+
+    const videoBlob = new Blob(recordedChunks, {
+        type: "video/webm"
     });
 
     console.log("Recording created:", videoBlob);
@@ -73,11 +75,14 @@ startRecordingButton.addEventListener('click', () => {
     formData.append("action", "punch");
 
     try {
+        console.log("SENDING VIDEO TO BACKEND...");
 
         const response = await fetch("http://localhost:8000/predict", {
             method: "POST",
             body: formData
         });
+
+        console.log("BACKEND RESPONSE RECEIVED");
 
         if (!response.ok) {
             throw new Error(`Server returned ${response.status}`);
@@ -85,28 +90,29 @@ startRecordingButton.addEventListener('click', () => {
 
         const data = await response.json();
 
-        console.log("Backend response:", data);
+        console.log("BACKEND DATA:", data);
 
-        if (data.error) {
-            resultDiv.textContent = `Error: ${data.error}`;
-            resultDiv.style.color = "red";
-        } else {
-            resultDiv.textContent =
-                `${data.label.toUpperCase()} — ${(data.confidence * 100).toFixed(1)}% confidence`;
+        // Save the result immediately
+        localStorage.setItem("punchResult", JSON.stringify(data));
 
-            resultDiv.style.color =
-                data.label === "good" ? "green" : "red";
-        }
+        console.log("RESULT SAVED TO LOCAL STORAGE");
+
+        localStorage.setItem("punchResult", JSON.stringify(data));
+
+        console.log("RESULT SAVED");
+
+        window.location.href = "results.html";
+
+        resultDiv.textContent =
+            `Result: ${data.label} — Confidence: ${(data.confidence * 100).toFixed(1)}%`;
 
     } catch (error) {
 
         console.error("Upload failed:", error);
-        resultDiv.textContent = "Could not analyse video.";
-        resultDiv.style.color = "red";
 
     }
 
-    };
+};
 
     mediaRecorder.start();
 
@@ -185,4 +191,3 @@ function nextMessage() {
 
 
 // Start with message 1
-typeMessage();
