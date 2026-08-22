@@ -266,6 +266,13 @@
     height: auto;
     image-rendering: pixelated;
 }
+.tutorial-video{
+    position: fixed;
+    top: 25vh;
+    left: 5%;
+    width: 45vw;
+
+}
 
 /* LEVEL 1 PAGE CSS */
 
@@ -325,6 +332,14 @@
     background-color: grey;
 }
 
+.second_hlf {
+    padding: 0px 30px;
+}
+
+.lvl_ttl {
+    color: white;
+}
+
 
 
 /*example*/
@@ -346,25 +361,25 @@
 
 details {
 	position: relative;
-	max-inline-size: 40rem;
+	/*max-inline-size: 40rem;*/
 	padding: 1rem;
+    color:#E4FF;
 	margin-block: 1rem 0;
 	margin-inline: auto;
 	background-image: linear-gradient(
-		to top left,
-		hsl(260deg 80% 80%) 0,
-		hsl(0deg 100% 95%)
+		to left,
+		#474350 40%,
+        black 90%
 	);
-	border: 1px solid hsl(260deg 100% 95%);
+	border: 1px solid hsl(0, 0%, 0%);
 	border-radius: 0.3rem;
 }
 
 summary {
+    color: white;
     font-size: 40px;
     font-family: 'Jersey 15', sans-serif;;
-
 	position: relative;
-	font-weight: 700;
 	cursor: pointer;
 }
 
@@ -403,4 +418,9 @@ summary::before {
 .details[open] summary::before {
 	rotate: 90deg;
 	inset-block-start: 0.05rem;
+}
+
+.punch_tut {
+    width: 50vw;
+    height: auto;
 }
