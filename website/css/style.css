@@ -402,7 +402,7 @@ details {
 	/*max-inline-size: 40rem;*/
 	padding: 1rem;
     width: 100%;
-    color:#E4FF;
+    color:rgb(225, 159, 231);
 	margin-block: 1rem 0;
 	margin-inline: auto;
 	background-image: linear-gradient(
@@ -422,6 +422,13 @@ summary {
 	cursor: pointer;
 }
 
+.details__content {
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
 /* Demo Code */
 .details::details-content {
 	display: block;
