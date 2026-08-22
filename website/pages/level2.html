@@ -40,20 +40,21 @@
             About
         </a>
     </li>
+
     </ul>
     <div class="second_hlf">
         <div class="main_cont">
             <h2 class="lvl_ttl">
-                LEVEL 2: CHOP!
-                IDK!!
+                LEVEL 2: KICK!
+                CREATE DISTANCE WITH YOUR OPPONENT!!!
             </h2>
                     <!--code retreived from FreeFrontEnd: https://freefrontend.com/css-accordions/-->
             <div class="example">
                 <details open class="details" name="CSS Weekly" style="--i: 1;">
-                    <summary class="details__summary">Steps For Learning to Chop</summary>
+                    <summary class="details__summary">Steps For Learning to Kick</summary>
                     <div class="details__content">
                         <video class="punch_tut" controls>
-                            <source src="../../chanthanatutorials/punch_tut.mp4" type="video/mp4">
+                            <source src="../../chanthanatutorials/front_kick_follow_along.mp4" type="video/mp4">
                         </video>
                         <ul class="steps">
                             <li>1. Step back with your right leg.</li>
@@ -67,14 +68,18 @@
             </div>
             <div class="video-row">
                 <video class="punch_ref" controls>
-                <source src="../../chanthanatutorials/punch_follow_along.mp4" type="video/mp4">
+                <source src="../../chanthanatutorials/punch_tut.mp4" type="video/mp4">
                 </video>
                 <div class="webcam-group">
+
                     <video class="lvlwebcam" id="webcam" autoplay></video>
-                <div  class="lvl-buttons">
-                    <button id="stop-webcam">STOP CAMERA</button>
-                    <button id="start-webcam">START CAMERA</button>
-                </div>
+
+                    <div class="lvlbuttons">
+                        <button type="button" id="stop-webcam">STOP CAMERA</button>
+                        <button type="button" id="start-webcam">START CAMERA</button>
+                        <button type="button" id="start-recording">START RECORDING</button>
+                        <button type="button" id="stop-recording">STOP RECORDING</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,6 +89,6 @@
         </div>
     </div>
     <script src="../javascript/level1.js"></script>
-    <script src="../javascript/tutorialmain.js"></script>
+    <script src = "../javascript/camera.js"></script>
 </body>
 </html>
