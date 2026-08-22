@@ -105,7 +105,7 @@
     }
 
     50% {
-        transform: translateY(-20px) rotate(-10deg);
+        transform: translateY(20px) rotate(10deg);
     }
 }
 
@@ -115,7 +115,7 @@
     }
 
     50% {
-        transform: translateY(-20px) rotate(10deg);
+        transform: translateY(20px) rotate(-10deg);
     }
 }
 
@@ -219,6 +219,7 @@
     background-color: grey;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .dropdown:hover .drop-level {
@@ -229,8 +230,8 @@
 .drop-level {
   display: none;
   position: absolute;
-  top: 70px;
-  right: 417px;
+  top: 100%;
+  left: 0;
   background-color: #1E1E1E;
   min-width: 120px;
   z-index: 100;
@@ -295,5 +296,5 @@
     width: 100vw;
     height: 100vh;
     border-radius: 0;
-
 }
+
