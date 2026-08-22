@@ -280,13 +280,23 @@ width: 45vw; }
 .webcam-buttons{
     position: fixed;
     top: 75vh;
-    left: 70%;}
+    left: 70%;
+    z-index: 2000;}
 
 #stop-webcam, #start-webcam{
     width: clamp(80px, 10vw, 140px);
     font-family: 'Jersey 15', sans-serif;
     background-color: #865DFF;
     color: white;
+}
+
+.instructions-container{
+    position: fixed;
+    top: 70vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    text-align: center;
 }
 
 /* LEVEL 1 PAGE CSS */
