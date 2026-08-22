@@ -418,6 +418,7 @@ summary::before {
 .punch_tut {
     width: 40vw;
     height: auto;
+}
 /*About Page */
 /*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
 .scrollport {
@@ -482,6 +483,7 @@ summary::before {
     text-align: center;
     margin-top: 10vh;
 }
+
 #name{
     font-family: 'Jersey 15', sans-serif;
     text-align: center;
