@@ -123,6 +123,9 @@ all_labels = []
 with torch.no_grad():
     for X_batch, y_batch in test_loader:
         outputs = model(X_batch)
+        #how to get "confidence score"
+        probabilities = torch.nn.functional.softmax(outputs, dim=1)
+        print(probabilities[0][0]) #probability that the first one is "bad"
         preds = torch.argmax(outputs, dim=1)
         all_preds.extend(preds.tolist())
         all_labels.extend(y_batch.tolist())
