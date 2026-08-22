@@ -1,3 +1,0 @@
-Our data is:
-features (video_no, frame, timestamp_ms, good, x0,y0,z0,visibility0, ... visibility32)
-1-10 are irrelevant features (need to drop)
