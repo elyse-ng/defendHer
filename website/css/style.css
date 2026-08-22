@@ -247,7 +247,7 @@
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-
+    z-index: 100;
     display: flex;
     flex-direction: column;
 }
@@ -271,6 +271,7 @@ left: 5%;
 width: 45vw; }
 
 .webcam{
+    z-index: 1;
  position: fixed;
  top: 17vh;
  left: 56%;
@@ -306,7 +307,6 @@ width: 45vw; }
 }
 
 .dropdown {
-    background-color: grey;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -362,11 +362,16 @@ width: 45vw; }
 }
 
 .second_hlf {
-    padding: 0px 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 .lvl_ttl {
+    text-align: center;
     color: white;
+    font-size: 5vw;
+    font-family: 'Jersey 15', sans-serif;
 }
 
 
@@ -387,11 +392,16 @@ width: 45vw; }
 		hsl(0deg 100% 50%)
 	);
 }*/
+.example {
+    width: 90%;
+    max-width: 1100px;
+}
 
 details {
 	position: relative;
 	/*max-inline-size: 40rem;*/
 	padding: 1rem;
+    width: 100%;
     color:#E4FF;
 	margin-block: 1rem 0;
 	margin-inline: auto;
@@ -469,15 +479,97 @@ summary::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .steps {
+    font-family: 'Jersey 15', sans-serif;
     list-style-type: none;
     align-items: flex-start;
     font-size: clamp(17px, 3vw, 30px);
     
 }
 
+.lvl-bubble-container {
+    position: relative;
+    bottom: 1rem;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.lvl-bubble {
+    height: auto;
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+.lvl-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content:center;
+    width: 100%;
+}
+
+.punch-lvlguy {
+    position: fixed;
+    bottom: -1rem;
+    right: 67vw;
+    width: 5vw; 
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.lvl-bubble-container {
+    position: relative;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.lvl-bubble {
+bottom: -1.5rem; 
+width: 60vw; height: 20vh; 
+image-rendering: pixelated; }
+
+.main_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.video-row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 90%;
+}
+
+.webcam-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.lvlwebcam {
+    min-width: 500px;
+    width: 40vw;
+    z-index: 1;
+}
 /*About Page */
 /*Ref: https://freefrontend.com/css-scroll-effects/page/2/#03-11-2022-horizontal-scroller-edge-fade-mask-l */
 .scrollport {
@@ -493,10 +585,14 @@ summary::before {
 }
 
 .scrollport > div {
+  margin-left: 2%;
+  margin-right: 2%;
   block-size: var(--size-15);
   aspect-ratio: var(--ratio-square);
-    background-color: rgb(255 255 255 / 50%);
-  border-radius: var(--radius-3);
+  flex: 0 0 380px;
+  padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4%;
   box-shadow: var(--shadow-4);
 }
 
@@ -507,21 +603,29 @@ summary::before {
     margin: auto;
     margin-top:5%;
 
-    border-radius: var(--radius-3);
+    border-radius: 5%;
 }
 
 .scrollport> div > a {
     display: block;
     width: fit-content;
     margin-inline: auto;
+    
 }
 
 .about-container > p {
     color: white;
     padding-top: 2rem;
-    width: 90%;
+    width: 50%;
     margin-inline: auto;
     text-align: center;
+    
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
 }
 
 .about-countainer {
@@ -542,6 +646,7 @@ summary::before {
     display: inline-block;
     font-family: 'Jersey 15', sans-serif;
     text-align: center;
+    font-size: 3rem;
     margin-top: 10vh;
     margin-left: 5vw;
 }
@@ -549,4 +654,5 @@ summary::before {
 #name{
     font-family: 'Jersey 15', sans-serif;
     text-align: center;
+    color: black;
 }

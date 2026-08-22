@@ -19,10 +19,10 @@
         <div class="drop-level">
             <a href="level1.html">
                 <img src="../assets/lock.png">
-                Lvl 1: BLOCK</a>
+                Lvl 1: PUNCH</a>
             <a href="level2.html">
                 <img src="../assets/lock.png">
-                Lvl 2: PUNCH</a>
+                Lvl 2: CHOP</a>
             <a href="level3.html">
                 <img src="../assets/lock.png">
                 Lvl 3: KICK</a>
@@ -42,36 +42,46 @@
     </li>
     </ul>
     <div class="second_hlf">
-        
-        <!--code retreived from FreeFrontEnd: https://freefrontend.com/css-accordions/-->
-        <div class="example">
-            <details open class="details" name="CSS Weekly" style="--i: 1;">
-                <summary class="details__summary">Steps For Learning to Punch</summary>
-                <div class="details__content">
-                    <video class="punch_tut" controls>
-                        <source src="../../chanthanatutorials/punch_follow_along.mp4" type="video/mp4">
-                    </video>
-                    <ul class="steps">
-                        <li>1. Step back with your right leg.</li>
-                        <li>2. Raise your right knee to 90°.</li>
-                        <li>3. Extend your leg while pushing your hips forward.</li>
-                        <li>4. Retract your knee to 90°.</li>
-                        <li>5. Return your right leg to the starting position.</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
         <div class="main_cont">
             <h2 class="lvl_ttl">
-                LEVEL 1: PUNCH!
-                THE BEST DEFENCE IS OFFENCE!!
+                LEVEL 1: CHOP!
+                IDK!!
             </h2>
-            <video class="punch_ref" controls>
+                    <!--code retreived from FreeFrontEnd: https://freefrontend.com/css-accordions/-->
+            <div class="example">
+                <details open class="details" name="CSS Weekly" style="--i: 1;">
+                    <summary class="details__summary">Steps For Learning to Chop</summary>
+                    <div class="details__content">
+                        <video class="punch_tut" controls>
+                            <source src="../../chanthanatutorials/punch_follow_along.mp4" type="video/mp4">
+                        </video>
+                        <ul class="steps">
+                            <li>1. Step back with your right leg.</li>
+                            <li>2. Raise your right knee to 90°.</li>
+                            <li>3. Extend your leg while pushing your hips forward.</li>
+                            <li>4. Retract your knee to 90°.</li>
+                            <li>5. Return your right leg to the starting position.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="video-row">
+                <video class="punch_ref" controls>
                 <source src="../../chanthanatutorials/punch_tut.mp4" type="video/mp4">
-            </video>
+                </video>
+                <video class="lvlwebcam" id="webcam" autoplay></video>
+                <div  class="lvl-buttons">
+                    <button id="stop-webcam">STOP CAMERA</button>
+                    <button id="start-webcam">START CAMERA</button>
+                </div>
+            </div>
         </div>
-
+        <div class="lvl-bubble-container">
+            <img src="../assets/long_speech_bubble.png" class="lvl-bubble" alt="TALKING BUBBLE">
+            <img src="../assets/punch.png" class="punch-lvlguy" alt="LITTLE PUNCHING GUY">
+        </div>
     </div>
     <script src="../javascript/level1.js"></script>
+    <script src="../javascript/tutorialmain.js"></script>
 </body>
 </html>
