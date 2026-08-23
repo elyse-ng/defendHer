@@ -94,10 +94,11 @@ Trained model artifacts, per action (kick, punch, chop):
 
 ## Quick Start
 1. Start backend
-```uvicorn main:app --reload
+```bash
+uvicorn main:app --reload
 ```
 2. Start frontend
-Acivate live server
+Acrivate live server
 
 ## Pipeline Details
 Extracting landmarks -> Random Forest Model -> Backend FastAPI -> Frontend
