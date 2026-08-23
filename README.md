@@ -1,4 +1,6 @@
 # defendHer
+Created by: Karate Kids: Amy Clinton, Catherine Zhou, Chanthana Lov, Crystal Wang, Daisy Thurlby, Elyse Ng
+
 ## Table of Contents
 1. [Overview](#Overview)
 2. [Project Structure](#Project-Structure)
@@ -135,11 +137,15 @@ uvicorn main:app --reload
 ```
 
 ### Front End
-Plain HTML/JS (graphics, visuals, text)
+Plain HTML/CSS/JS (graphics, visuals, text)
 - Requests webcam access via `getUserMedia`.
 - Records with `MediaRecorder`, producing a `video/webm` Blob.
 - On stop, uploads the blob to `/predict` via `fetch` + `FormData`.
 - Displays the returned label and confidence.
+
+**Icons and Assets** Hand-drawn
+
+**Design Inspirations** Codex, Stardew Valley, T-rex game: Dino run
 
 ## Troubleshooting and Unresolved Issues
 
