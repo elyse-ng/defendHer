@@ -148,7 +148,8 @@ Plain HTML/JS (graphics, visuals, text)
 - **Media Pipe Mac Error**: Throws error for newest version of media pipe. If you have it installed,
 
 ```bash
-pip3 uninstall mediapipe -y. pip3 install mediapipe==0.10.30
+pip3 uninstall mediapipe -y
+pip3 install mediapipe==0.10.30
 ```
 - **Library not installed" even though pip install succeeded**: Usually means pip3/python3 point to a different Python than the one actually running your script. Check with which python3 and which pip3, and reinstall using the exact interpreter you're running.
 
