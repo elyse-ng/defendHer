@@ -74,14 +74,23 @@ Python ≥ 3.9
 Live Server (extension)
 
 mediapipe: Pose landmark detection from video
+
 opencv-python: Video reading/frame handling (cv2)
+
 numpy: Array/numeric operations
+
 pandas: CSV handling, dataframes
+
 scikit-learn: Random Forest model, train/test split, label encoding
+
 joblib: Saving/loading the Random Forest model
+
 fastapi	Backend: API framework
+
 uvicorn: ASGI server to run the FastAPI app
+
 python-multipart: Required by FastAPI to handle file uploads (UploadFile)
+
 pillow / pillow-heif: Only needed if converting .HEIC images
 
 ### Note (if you want to train your own machine): Model/Data Files Required - Not installed by pip
@@ -131,6 +140,30 @@ Plain HTML/JS (graphics, visuals, text)
 - Records with `MediaRecorder`, producing a `video/webm` Blob.
 - On stop, uploads the blob to `/predict` via `fetch` + `FormData`.
 - Displays the returned label and confidence.
+
+## Troubleshooting and Unresolved Issues
+
+- **Unresponsive Video Upload**: make sure back end is running or restard backend. Start: uvicorn main:app --reload. Stop: CTR+C.
+
+- **Media Pipe Mac Error**: Throws error for newest version of media pipe. If you have it installed,
+
+```bash
+pip3 uninstall mediapipe -y. pip3 install mediapipe==0.10.30
+```
+- **Library not installed" even though pip install succeeded**: Usually means pip3/python3 point to a different Python than the one actually running your script. Check with which python3 and which pip3, and reinstall using the exact interpreter you're running.
+
+- **Camera won't turn on**: Make sure you've allowed camera access when your browser asked for permission. Close any other apps or browser tabs that might already be using your camera. Try refreshing the page and clicking "Start Camera" again.
+
+- **No result**: Give it some time. Make sure your whole body is visible in frame and you have good lighting during your recording.
+
+- **Strange results/seems incorrect**: Make sure you're doing the correct move for the level you're on, make sure your whole body is visible in frame and you have good lighting during your recording.
+
+- **Frozen page**: Refresh or try another browser
+
+### Unresolved Issues
+- Different UI: UI can appear different on different devices
+- Unresponsive: Sometimes video does not stop recording.
+- Slow Feedback: Video generation can take up to one minute
 
 ## AI Usage Declaration
 AI tools were used selectively to support the development of this project.
