@@ -3,6 +3,7 @@ Created by: Karate Kids: Amy Clinton, Catherine Zhou, Chanthana Lov, Crystal Wan
 
 ## Table of Contents
 1. [Overview](#Overview)
+2. [Demo Videos](#Demo-Videos)
 2. [Project Structure](#Project-Structure)
 3. [Prerequesites](#Prerequesites)
 4. [Quick Start](#Quick-Start)
@@ -32,6 +33,23 @@ DefendHer is a full stack educational web application that:
 - Tutorial: Teaches you how to use the interface
 - About: A bit about our team :)
 5. Connection from front end to back end: A webcam based recording interface (plain HTML/JS) captures the user's attempt, uploads it to the backend, and displays the altered video and feedback. 
+
+## Demo Videos
+<video width="550" height="340" controls>
+  <source src="demo_videos\home page.mp4" type="video/mp4">
+</video>
+<video width="550" height="340" controls>
+  <source src="demo_videos\tutorial page.mp4" type="video/mp4">
+</video>
+<video width="550" height="340" controls>
+  <source src="demo_videos\levels page.mp4" type="video/mp4">
+</video>
+<video width="550" height="340" controls>
+  <source src="demo_videos\results page.mp4" type="video/mp4">
+</video>
+<video width="550" height="340" controls>
+  <source src="demo_videos\about page.mp4" type="video/mp4">
+</video>
 
 ## Project Structure
 ```
