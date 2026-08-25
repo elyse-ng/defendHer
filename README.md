@@ -35,21 +35,16 @@ DefendHer is a full stack educational web application that:
 5. Connection from front end to back end: A webcam based recording interface (plain HTML/JS) captures the user's attempt, uploads it to the backend, and displays the altered video and feedback. 
 
 ## Demo Videos
-<video width="550" height="340" controls>
-  <source src="demo_videos\home page.mp4" type="video/mp4">
-</video>
-<video width="550" height="340" controls>
-  <source src="demo_videos\tutorial page.mp4" type="video/mp4">
-</video>
-<video width="550" height="340" controls>
-  <source src="demo_videos\levels page.mp4" type="video/mp4">
-</video>
-<video width="550" height="340" controls>
-  <source src="demo_videos\results page.mp4" type="video/mp4">
-</video>
-<video width="550" height="340" controls>
-  <source src="demo_videos\about page.mp4" type="video/mp4">
-</video>
+
+https://github.com/user-attachments/assets/62dfc947-a535-4051-9c61-9f7f2a31daa9
+
+https://github.com/user-attachments/assets/69d4689c-81a6-4d03-88ca-df7b60798810
+
+https://github.com/user-attachments/assets/838f30c7-6be4-41fc-8b45-648f6feb5e40
+
+https://github.com/user-attachments/assets/9e806f6a-4be2-45ac-9e20-705471a35291
+
+https://github.com/user-attachments/assets/29079f5b-4923-428c-8fb5-9f8d75846740
 
 ## Project Structure
 ```
